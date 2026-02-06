@@ -103,7 +103,7 @@ export const TimeTrackingService = {
                 company_id: 'comp_default',
                 date: todayStr,
                 check_in: new Date().toISOString(),
-                status: 'active',
+                status: 'active' as const,
                 total_minutes: 0,
                 accumulated_seconds: 0,
             };

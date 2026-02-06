@@ -19,10 +19,11 @@ export type SessionStatus = 'active' | 'paused' | 'completed';
 
 export interface Break {
     id: string;
-    session_id: string;
-    start_time: string; // ISO string
-    end_time?: string; // ISO string
+    work_session_id: string;
+    break_start: string; // ISO string
+    break_end?: string | null; // ISO string
     duration_minutes: number;
+    created_at?: string;
 }
 
 export interface WorkSession {
@@ -34,6 +35,6 @@ export interface WorkSession {
     check_out?: string; // ISO string
     total_minutes: number;
     accumulated_seconds: number;
-    status: SessionStatus;
+    status: 'active' | 'paused' | 'completed';
     breaks: Break[];
 }
